@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Simple Area Calculator Using DOM</title>
+
+        <style>
+            .card-image {
+              height: 10rem;
+            }
+          </style>
+
+    </head>
+
+    <body class="bg-gray-100 p-8">
+        <h1 class="text-3xl text-center mb-5 font-bold">
+            Simple <span class="font-bold text-violet-400">Calculator</span>
+        </h1>
+
+        <div class="flex flex-wrap -mx-4">
+
+            <!-- Triangle -->
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md ">
+                    <img src="img/tri.jpg" alt="Card Image"
+                        class="mb-4 rounded-md mx-auto w-60 card-image object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Triangle</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area = 0.5 * b *
+                        h</p>
+                    <div class="flex mb-4">
+                        <input id="triangle-base" type="text"
+                            class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter base in cm">
+                        <input id="triangle-height" type="text"
+                            class="w-1/2 border p-2"
+                            placeholder="Enter height in cm">
+                    </div>
+                    <div class="border p-2 mb-4">Area = <span
+                            id="triangle-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="triangle-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+
+                </div>
+            </div>
+
+            <!-- Rectangle -->
+
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md ">
+                    <img src="img/rec.png" alt="Card Image"
+                        class="mb-4 rounded-md w-60 card-image mx-auto object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Rectangle</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area = w * l</p>
+                    <div class="flex mb-4">
+                        <input id="rectangle-width" type="text"
+                            class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter Width in cm">
+                        <input id="rectangle-height" type="text"
+                            class="w-1/2 border p-2"
+                            placeholder="Enter Length in cm">
+                    </div>
+                    <div class="border p-2 mb-4">Area = <span
+                            id="rectangle-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="rectangle-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+                </div>
+            </div>
+
+            <!-- Parallelogram -->
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md">
+                    <img src="img/f.webp" alt="Card Image"
+                        class="mb-4 rounded-md w-60 card-image mx-auto object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Parallelogram</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area = b * h</p>
+                    <div class="flex mb-4">
+                        <input id="parallelogram-base" type="text"
+                            class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter base in cm">
+                        <input id="parallelogram-height" type="text"
+                            class="w-1/2 border p-2"
+                            placeholder="Enter height in cm">
+                    </div>
+                    <div class="border p-2 mb-4 ">Area = <span
+                            id="parallelogram-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="parallelogram-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+                </div>
+            </div>
+
+            <!-- Rhombus -->
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md">
+                    <img src="img/ea.svg" alt="Card Image"
+                        class="mb-4 rounded-md w-55 card-image mx-auto object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Rhombus</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area =
+                        (d<sub>1</sub>*
+                        d<sub>2</sub>) / 2</p>
+                    <div class="flex mb-4">
+                        <input id="d1-box" type="text"
+                            class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter d1 in cm">
+                        <input id="d2-box" type="text" class="w-1/2 border p-2"
+                            placeholder="Enter d2 in cm">
+                    </div>
+                    <div class="border p-2 mb-4">Area = <span
+                            id="rhombus-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="rhombus-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+                </div>
+            </div>
+
+            <!-- Pentagon -->
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md">
+                    <img src="img/pn.jpg" alt="Card Image"
+                        class="mb-4 rounded-md w-50 card-image mx-auto object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Pentagon</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area = 0.5 * p *
+                        b</p>
+                    <div class="flex mb-4">
+                        <input id="pen-height" type="text"
+                            class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter p in cm">
+                        <input id="pen-base" type="text"
+                            class="w-1/2 border p-2"
+                            placeholder="Enter b in cm">
+                    </div>
+                    <div class="border p-2 mb-4">Area = <span
+                            id="pen-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="pen-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+                </div>
+            </div>
+
+            <!-- Ellipse -->
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="bg-white p-6 rounded-md shadow-md">
+                    <img src="img/e.png" alt="Card Image"
+                        class="mb-4 rounded-md w-60 card-image mx-auto object-cover">
+                    <h2
+                        class="text-xl font-semibold mb-4 text-center">Ellipse</h2>
+                    <p class="text-gray-400 mb-4 text-center">Area = π * a *
+                        b</p>
+                    <div class="flex mb-4">
+                        <input id="ep-a" type="text" class="w-1/2 border p-2 mr-2"
+                            placeholder="Enter a in cm">
+                        <input id="ep-b" type="text" class="w-1/2 border p-2"
+                            placeholder="Enter b in cm">
+                    </div>
+                    <div class="border p-2 mb-4">Area = <span id="ep-area">00</span> cm
+                        <sup>2</sup></div>
+                    <button id="ep-btn"
+                        class="bg-blue-500 text-white px-4 py-2 mx-auto rounded-md hover:bg-blue-700">Calculate</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script/triangle.js"></script>
+        <script src="script/rectangle.js"></script>
+        <script src="script/Parallelogram.js"></script>
+        <script src="script/Rhombus.js"></script>
+        <script src="script/Pentagon.js"></script>
+        <script src="script/Ellipse.js"></script>
+
+    </body>
+</html>
